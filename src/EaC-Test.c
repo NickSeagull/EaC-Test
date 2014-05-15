@@ -1,10 +1,8 @@
 #include <string.h>
 #include <stdio.h>
 
-#define BOLD 1
 #define FG_RED 31
 #define FG_GREEN 32
-#define FG_WHITE 37
 #define BG_BLACK 40
 #define INIT_COLOR 0x1B
 
@@ -43,6 +41,7 @@ int assertIntEquals(char *msg, int a, int b){
     }
     else{
         fail(msg);
+        printf("%d is not %d\n",a,b);
     }
     return 0;
 }
@@ -53,6 +52,7 @@ int assertStringEquals(char *msg, char *a, char *b){
     }
     else{
         fail(msg);
+        printf("%s is not %s\n",a,b);
     }
 }
 
@@ -62,11 +62,18 @@ int assertTrue(char *msg, int condition){
     }
     else{
         fail(msg);
+        printf("result was false\n");
     }
     return 0;
 }
 
 int assertFalse(char *msg, int condition){
-    assertTrue(msg, condition!=0);
+    if(condition != 0){
+        pass(msg);
+    }
+    else{
+        fail(msg);
+        printf("result was true\n");
+    }
     return 0;
 }
