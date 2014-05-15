@@ -37,7 +37,7 @@ int fail(char *desc){
     return 0;
 }
 
-int test_equal_ints(char *msg, int a, int b){
+int assertIntEquals(char *msg, int a, int b){
     if(a == b){
         pass(msg);
     }
@@ -47,7 +47,7 @@ int test_equal_ints(char *msg, int a, int b){
     return 0;
 }
 
-int test_equal_strings(char *msg, char *a, char *b){
+int assertStringEquals(char *msg, char *a, char *b){
     if(strcmp(a, b) == 0){
         pass(msg);
     }
@@ -56,7 +56,7 @@ int test_equal_strings(char *msg, char *a, char *b){
     }
 }
 
-int test_is_true(char *msg, int condition){
+int assertTrue(char *msg, int condition){
     if(condition){
         pass(msg);
     }
@@ -66,7 +66,7 @@ int test_is_true(char *msg, int condition){
     return 0;
 }
 
-int test_is_false(char *msg, int condition){
-    test_is_true(msg, condition!=0);
+int assertFalse(char *msg, int condition){
+    assertTrue(msg, condition!=0);
     return 0;
 }
