@@ -17,23 +17,21 @@ void printInRed(const char* message){
     printf(NORMAL_COLOR "");
 }
 
-int pass(char* desc){
+void pass(char* desc){
     char message[128] = "\0";
     strcat(message, desc);
     strcat(message, " [PASSED]\n");
     printInGreen(message);
-    return 0;
 }
 
-int fail(char* desc){
+void fail(char* desc){
     char message[128]  = "\0";
     strcat(message, desc);
     strcat(message, " [FAILED]");
     printInRed(message);
-    return 0;
 }
 
-int assertIntEquals(char* msg, int a, int b){
+void assertIntEquals(char* msg, int a, int b){
     if(a == b){
         pass(msg);
     }
@@ -41,10 +39,9 @@ int assertIntEquals(char* msg, int a, int b){
         fail(msg);
         printf("  %d is not %d\n\n", a, b);
     }
-    return 0;
 }
 
-int assertStringEquals(char* msg, char* a, char* b){
+void assertStringEquals(char* msg, char* a, char* b){
     if(strcmp(a, b) == 0){
         pass(msg);
     }
@@ -54,7 +51,7 @@ int assertStringEquals(char* msg, char* a, char* b){
     }
 }
 
-int assertTrue(char* msg, int condition){
+void assertTrue(char* msg, int condition){
     if(condition){
         pass(msg);
     }
@@ -62,10 +59,9 @@ int assertTrue(char* msg, int condition){
         fail(msg);
         printf("  result was false\n\n");
     }
-    return 0;
 }
 
-int assertFalse(char* msg, int condition){
+void assertFalse(char* msg, int condition){
     if(condition != 0){
         pass(msg);
     }
@@ -73,5 +69,4 @@ int assertFalse(char* msg, int condition){
         fail(msg);
         printf("  result was true\n\n");
     }
-    return 0;
 }
