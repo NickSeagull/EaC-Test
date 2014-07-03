@@ -7,30 +7,30 @@
 #define INIT_COLOR 0x1B
 
 static int set_green_text(){
-    printf("%c[%d;%d;%dm",INIT_COLOR,FG_GREEN,BG_BLACK);
+    printf("%c[%d;%d;%dm", INIT_COLOR, FG_GREEN, BG_BLACK);
     return 0;
 }
 
 static int set_red_text(){
-    printf("%c[%d;%d;%dm",INIT_COLOR,FG_RED,BG_BLACK);
+    printf("%c[%d;%d;%dm", INIT_COLOR, FG_RED, BG_BLACK);
     return 0;
 }
 
 static int set_default_text(){
-    printf("%c[%dm\n",INIT_COLOR,0);
+    printf("%c[%dm\n", INIT_COLOR, 0);
     return 0;
 }
 
 int pass(char *desc){
     set_green_text();
-    printf("%s [PASSED]\n",desc);
+    printf("%s [PASSED]\n", desc);
     set_default_text();
     return 0;
 }
 
 int fail(char *desc){
     set_red_text();
-    printf("%s [FAILED]\n",desc);
+    printf("%s [FAILED]\n", desc);
     set_default_text();
     return 0;
 }
@@ -41,7 +41,7 @@ int assertIntEquals(char *msg, int a, int b){
     }
     else{
         fail(msg);
-        printf("%d is not %d\n",a,b);
+        printf("%d is not %d\n", a, b);
     }
     return 0;
 }
