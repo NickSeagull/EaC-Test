@@ -31,42 +31,42 @@ void fail(char* desc){
     printInRed(message);
 }
 
-void assertIntEquals(char* msg, int a, int b){
+void assertIntEquals(char* message, int a, int b){
     if(a == b){
-        pass(msg);
+        pass(message);
     }
     else{
-        fail(msg);
+        fail(message);
         printf("  %d is not %d\n\n", a, b);
     }
 }
 
-void assertStringEquals(char* msg, char* a, char* b){
+void assertStringEquals(char* message, char* a, char* b){
     if(strcmp(a, b) == 0){
-        pass(msg);
+        pass(message);
     }
     else{
-        fail(msg);
+        fail(message);
         printf("  %s is not %s\n\n", a, b);
     }
 }
 
-void assertTrue(char* msg, int condition){
+void assertTrue(char* message, int condition){
     if(condition){
-        pass(msg);
+        pass(message);
     }
     else{
-        fail(msg);
+        fail(message);
         printf("  result was false\n\n");
     }
 }
 
-void assertFalse(char* msg, int condition){
+void assertFalse(char* message, int condition){
     if(condition != 0){
-        pass(msg);
+        pass(message);
     }
     else{
-        fail(msg);
+        fail(message);
         printf("  result was true\n\n");
     }
 }
