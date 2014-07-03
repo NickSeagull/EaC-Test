@@ -57,16 +57,16 @@ void assertTrue(char* description, int condition){
     }
     else{
         fail(description);
-        printf("  result was false\n\n");
+        printf("  Expected true but was false\n\n");
     }
 }
 
 void assertFalse(char* description, int condition){
-    if(condition != 0){
-        pass(description);
+    if(condition){
+        fail(description);
+        printf("  Expected false but was true\n\n");
     }
     else{
-        fail(description);
-        printf("  result was true\n\n");
+        pass(description);
     }
 }
