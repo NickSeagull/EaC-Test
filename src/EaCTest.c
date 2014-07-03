@@ -17,56 +17,56 @@ void printInRed(const char* message){
     printf(NORMAL_COLOR "");
 }
 
-void pass(char* desc){
+void pass(char* description){
     char message[128] = "\0";
-    strcat(message, desc);
+    strcat(message, description);
     strcat(message, " [PASSED]\n");
     printInGreen(message);
 }
 
-void fail(char* desc){
+void fail(char* description){
     char message[128]  = "\0";
-    strcat(message, desc);
+    strcat(message, description);
     strcat(message, " [FAILED]");
     printInRed(message);
 }
 
-void assertIntEquals(char* message, int a, int b){
+void assertIntEquals(char* description, int a, int b){
     if(a == b){
-        pass(message);
+        pass(description);
     }
     else{
-        fail(message);
+        fail(description);
         printf("  %d is not %d\n\n", a, b);
     }
 }
 
-void assertStringEquals(char* message, char* a, char* b){
+void assertStringEquals(char* description, char* a, char* b){
     if(strcmp(a, b) == 0){
-        pass(message);
+        pass(description);
     }
     else{
-        fail(message);
+        fail(description);
         printf("  %s is not %s\n\n", a, b);
     }
 }
 
-void assertTrue(char* message, int condition){
+void assertTrue(char* description, int condition){
     if(condition){
-        pass(message);
+        pass(description);
     }
     else{
-        fail(message);
+        fail(description);
         printf("  result was false\n\n");
     }
 }
 
-void assertFalse(char* message, int condition){
+void assertFalse(char* description, int condition){
     if(condition != 0){
-        pass(message);
+        pass(description);
     }
     else{
-        fail(message);
+        fail(description);
         printf("  result was true\n\n");
     }
 }
