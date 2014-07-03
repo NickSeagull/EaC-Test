@@ -31,23 +31,23 @@ void fail(char* description){
     printInRed(message);
 }
 
-void assertIntEquals(char* description, int a, int b){
-    if(a == b){
+void assertIntEquals(char* description, int expected, int actual){
+    if(expected == actual){
         pass(description);
     }
     else{
         fail(description);
-        printf("  %d is not %d\n\n", a, b);
+        printf("  %d is not %d\n\n", expected, actual);
     }
 }
 
-void assertStringEquals(char* description, char* a, char* b){
-    if(strcmp(a, b) == 0){
+void assertStringEquals(char* description, char* expected, char* actual){
+    if(strcmp(expected, actual) == 0){
         pass(description);
     }
     else{
         fail(description);
-        printf("  %s is not %s\n\n", a, b);
+        printf("  %s is not %s\n\n", expected, actual);
     }
 }
 
