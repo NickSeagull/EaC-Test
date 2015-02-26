@@ -9,20 +9,18 @@ void assertFalse(char* description, int condition);
 #include <string.h>
 #include <stdio.h>
 
-#define NORMAL_COLOR "\x1B[0m"
-#define FG_RED "\x1B[31m"
-#define FG_GREEN "\x1B[32m"
-#define INIT_COLOR "0x1B[0m"
-#define BG_BLACK 40
+#define EACTEST_NORMAL_COLOR "\x1B[0m"
+#define EACTEST_FG_RED "\x1B[31m"
+#define EACTEST_FG_GREEN "\x1B[32m"
 
 void printInGreen(const char* message){
-    printf(FG_GREEN "%s\n", message);
-    printf(NORMAL_COLOR "");
+    printf(EACTEST_FG_GREEN "%s\n", message);
+    printf(EACTEST_NORMAL_COLOR "");
 }
 
 void printInRed(const char* message){
-    printf(FG_RED"%s\n", message);
-    printf(NORMAL_COLOR "");
+    printf(EACTEST_FG_RED"%s\n", message);
+    printf(EACTEST_NORMAL_COLOR "");
 }
 
 void pass(char* description){
