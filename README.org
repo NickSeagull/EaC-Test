@@ -1,0 +1,31 @@
+* EaC-Test
+** A unit testing library written in C for C.
+   EaC Test(Pronounced easy test).
+   The name is given by ea. (as for each) for the unit definition.
+   C for the language.
+   And Test (duh!).
+
+** Usage
+*** Asserting boolean values
+#+begin_src c
+	AssertTrue("Should be true and pass 1==1", 1 == 1);
+	AssertTrue("Should be false and fail 1==0", 1 == 0);
+	AssertFalse("Should be false and pass", 1 == 0);
+	AssertFalse("Should be true and fail", 1 == 1);
+#+end_src
+
+*** Asserting integers
+#+begin_src c
+	AssertIntEquals("Should pass", 1, 1);
+	AssertIntEquals("Should fail", 1, 2);
+#+end_src
+*** Asserting strings
+#+begin_src c
+	AssertStringEquals("Should pass", "1", "1");
+	AssertStringEquals("Should fail", "1", "2");
+#+end_src
+*** General testing
+#+begin_src c
+	Pass("This message will be displayed as a pass");
+	Fail("This message will be displayed as a fail");
+#+end_src
