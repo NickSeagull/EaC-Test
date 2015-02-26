@@ -1,4 +1,4 @@
-#include "src/EaCTest.h"
+#include "EaCTest.h"
 
 void shouldPassAssertTrue(){
 	assertTrue("1 == 1", 1 == 1);
